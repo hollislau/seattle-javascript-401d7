@@ -14,6 +14,12 @@ demoApp.config(['$routeProvider', function($rp) {
     })
     // AUTH_EXP: how do the signin/up routes differ and what is their relationship
     // with one another
+    // The two routes use the same template/view but different controllers. The controllerAs
+    // syntax allows different controllers to use the same name, which in turn allows the shared
+    // template to use each controller as needed. In the view, there are multiple conditionals and
+    // ternaries that check the boolean value of a signup property on the designated controller. If
+    // true, sign up specific text and functionality is displayed to the user; otherwise, sign in
+    // specific info is displayed.
     .when('/signup', {
       templateUrl: 'templates/auth/views/auth_view.html',
       controller: 'SignUpController',
